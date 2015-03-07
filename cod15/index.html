@@ -1,0 +1,1009 @@
+<!DOCTYPE HTML>
+<!-- <html lang="en-US"> -->
+<html lang="en-US" class="fade nonumbers  " manifest="eektraffic.appcache">
+<!-- 
+  ^ a class of "fade" makes slides fade smoothly into one another
+ -->
+<!-- <html lang="en-US" class="nonumbers"> -->
+<!-- 
+  If you want no numbers on the slides add a "nonumbers" class 
+  to the HTML element.
+  Adding a class of "fade" will make slides fade into another. 
+-->
+<head>
+  <meta charset="UTF-8">
+  <title>"Talk nerdy to me"</title>
+<!-- 
+  If you upload your slides to the web, ensure that you have 
+  a good title - this shows up in search results and social
+  media links
+ -->
+  <meta name="viewport" content="width=device-width, user-scalable=yes">
+  <link rel="stylesheet" href="mozilla/styles/style.css">
+  <style type="text/css">
+    #cover small.byline {
+      right: auto;
+      text-align: left;      
+    }
+    header h2 {
+      font-size: 30px;
+  text-shadow: 1px 1px 2px #000;
+    }
+    #light output {
+      position: absolute; 
+      font-size: 250px;
+      display: block;
+      width: 700px;
+      text-align: center;
+      opacity: 0.5;
+    }
+    h2.noback {
+      background: transparent;
+      color: #000;
+      font-size: 80px;
+    }
+    #doublefeature {
+      margin-top: -50px;
+    }
+    #doublefeature li {
+      list-item: none;
+      float: left;
+      width: 50%;
+      font-size: 18px;
+      text-align: center;
+    }
+    #doublefeature li::before {
+      content: '';
+    }
+    #doublefeature img {
+      height: 400px;
+      display: block;
+      margin: 10px auto;
+    }
+    #credits li {
+      font-size: 18px;
+    }
+    #manythings .animatelist li::before {
+      content: '';
+    }
+    .animatelist {
+      height: 200px;
+      width: 100%;
+      position: relative;
+      border-style: solid;
+      border-color: #333;
+      border-width: 3px 0px;
+      overflow: hidden;
+      transform: rotate(-2deg) translate(0,80px);
+      -webkit-transform: rotate(-3deg) translate(0,80px);
+    }
+    .full .animatelist ul {
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: scroll 10s 0.5s alternate infinite linear;
+      -webkit-animation: scroll 10s 0.5s alternate infinite linear;
+    }
+    @keyframes scroll {
+      from { top: 0; }
+      to { top: -1400px; }
+    }
+    @-webkit-keyframes scroll {
+      from { top: 0; }
+      to { top: -1400px; }
+    }
+    @keyframes fade {
+      from { opacity: 1; transform: scale(2,2) translateX(-50%)}
+      to { opacity: 0; transform: scale(1,1) translateX(-50%);}
+    }
+    @-webkit-keyframes scroll {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+    #dropoff:target img {
+      animation: fade 40s;
+      animation-repeat: 0;
+      animation-fill-mode: forwards;
+      -webkit-animation-repeat: 0;
+      -webkit-animation-fill-mode: forwards;
+      -webkit-animation: fade 40s;
+    }
+    .animatelist li {
+      font-size: 100px;
+    }
+    #blackandwhite h2 {
+      text-shadow: none;
+      background: transparent;
+      margin: 300px 0 0 440px;
+      color: #000;
+    }
+    #blackandwhite h2 small {
+      display: block;
+      font-size: 80%;
+      margin-top: 10px;
+    }
+    #dan h2 {
+      float: right;
+    }
+    #flappy video {
+      float: left;
+      margin-right: 60px;
+    }
+    #threescenarios .inner > li, #twoscenarios .inner > li{
+      float: left;
+      border-radius: 5px;
+      width: 28%;height: 350px;
+      font-weight: bold;
+      margin-right: 1%;
+      background: #D2CA74;
+      color: #000;
+      padding: 2%;
+      font-size: 20px;
+      box-shadow: 2px 2px 5px #000;
+    }
+    #threescenarios li::before {
+      content: '';
+    }
+    #threescenarios .inner li ul {
+      margin: 0 0 10px 0;
+    }
+    #threescenarios .inner ul li {
+      opacity: 1;
+      font-weight: normal;
+      width: 100%;
+      float: none;
+    }
+    #twoscenarios .inner li {
+      float: left;
+      width: 43%;
+      font-weight: bold;
+    }
+    #twoscenarios li::before {
+      content: '';
+    }
+    #twoscenarios .inner li ul {
+      margin: 0 0 10px 0;
+    }
+    #twoscenarios .inner ul li {
+      opacity: 1;
+      font-weight: normal;
+      width: 100%;
+      float: none;
+    }
+    #keepingbusy .inner {
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      padding: 10px;
+      width: 400px;
+    }
+    #keepingbusy .inner li::before{
+      content:'';
+    }
+    #cover h2 {
+      font-size: 80px;
+      float: left;
+      text-align: left;
+      background: rgba(0,0,0,0.6);
+    }
+    #cover .byline {
+      background: rgba(0,0,0,0.6);
+      left: 100px;
+      padding: 5px 10px;
+    }
+    #cover h2 span {
+      display: block;
+      font-size: 20px;
+    }
+    #fraud .demourl {
+      font-size: 12px;
+    }
+    #happier h2 {
+      text-align: center;
+      margin-top: -30px;
+    }
+    #superheroes h2 {
+      background: transparent;
+      color: #fff;
+    }
+    #interact h2{
+      background: transparent;
+      color: #000;
+      width: 40%;
+    }
+    #credits ul { 
+      color: #666;
+      position: absolute;
+      bottom: 0;
+      width: 750px;
+      padding: 10px;
+      font-size: 10px;
+      background: rgba(0,0,0,0.8);
+    }
+    #credits ul li {
+      font-size: 12px;
+    }
+    #credits li a {
+      background: transparent;
+      padding: 0;
+    }
+    #bluebox output {
+      display: block;
+      width: 200px;
+      height: 250px;
+      background: blue;
+    }
+    #dropoff .animatelist li {
+      font-size: 80px;
+    }
+    #win1031 header h2 {
+      margin-left: 120px;
+      font-size: 30px;
+      background: transparent;
+      margin-top: -28px;    
+    }
+    #win1031 .demourl {
+      bottom: 10px;
+    }
+    #griesgram h2 {
+      margin-top: 430px;
+      font-size: 40px;
+    }
+    blockquote.lots {
+      font-size: 24px;
+    }
+    #emailregex pre {
+      height: 350px;
+      overflow: auto;
+    }
+    #overlap h2 {
+      background: transparent;
+      color: black;
+            text-shadow: none;
+
+    }
+    #credits img {
+      margin-top: -230px;
+    }
+    #nopowerpoint h2 {
+      text-shadow: none;
+      background: transparent;
+      color: black;
+      margin-top: 200px;
+      width: 400px;
+    }
+    #credits p {
+      margin: 0 ;
+      float: left;
+      clear: left;
+    }
+    </style>
+</head>
+<body class="list">
+
+  <header class="caption">
+    <h1>Talk nerdy to me!</h1>
+    <h2>Kommunikation zwischen Techies und anderen Menschen</h2>
+    <p class="footer">
+      #communityopendayrocksandisoctoawesome #cod15
+      Christian Heilmann, 
+      <a href="http://twitter.com/">@codepo8</a>
+    </p>
+  </header>
+  <aside class="talkdescription">
+    <p>This slide deck is using the shower system - roll over the previews to see the notes and click any slide to go into presentation mode. Then use keys to navigate. <button onclick="goFullScreen()">Go fullscreen</button></p>
+    <p class="abstract">
+      <strong>Abstract: </strong>
+Kommunikation ist der Anfang und das Ende von Beziehungen. Beziehungen sind das, was uns erfolgreich macht. Problematisch wird das Alles, wenn verschiedene Gruppen miteinander kommunizieren und aufgrund ihrer Unterschiede aneinander vorbei reden. In dieser Keynote greift Christian Heilmann in das Naehkaestchen der Entwickler Kommunikation und gibt Tips und Tricks wie man “Nerdy” spricht ohne sich zu blamieren.
+</p>
+  </aside>
+
+<!-- 
+    Simply copy the whole block for each slide you want.
+  Special slides get extra classes. Each slide needs an ID 
+  to allow for bookmarking and target jumping.
+-->
+
+  <div id="cover" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Talk nerdy to me!
+        <span>Kommunikation zwischen Techies und anderen Menschen</span>
+        </h2>
+      </header>
+      <img src="pictures/scotty-talking-to-computer.jpg" 
+           alt="Scotty talking into a mouse" 
+           class="right" height="430">
+      <small class="byline">
+        Christian Heilmann, Community Open Day 2015, Munich, Germany, 7/03/15<br>
+        #communityopendayrocksandisoctoawesome #cod15
+      </small>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+<!-- end slide block -->
+
+  <div id="elite" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Als Entwickler hat man es gut…</h2>
+      </header>
+      <img src="pictures/lucky.jpg" 
+           alt="Lucky sign" 
+           class="middle shadow" height="450">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="talks" class="slide"><div>
+    <section>
+      <header>
+        <h2>Und ich hab das schon oft wiederholt…</h2>
+      </header>
+      <ul id="doublefeature">
+        <li>
+          <img src="pictures/chris2010.jpg" 
+               class="shadow" alt="chris in 2010">
+          <a href="http://vimeo.com/16249024">
+            “Reasons to be cheerful“ (Fronteers 2010)
+          </a>
+        </li>
+        <li>
+          <img src="pictures/chris2011.jpg" 
+               class="shadow" alt="chris in 2011">
+          <a href="http://vimeo.com/33650934">
+            “The prestige of being a web developer“ (Fronteers 2011)
+          </a>
+        </li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="win1031" class="slide cover"><div>
+    <section>
+      <header>
+        <h2>Betriebssysteme und Programmierumgebungen werden immer besser…</h2>
+      </header>
+      <img src="pictures/win1031.jpg" 
+           alt="Windows 10 with Win 3.11 look" 
+           class="middle shadow">
+      <p class="demourl">
+        <a href="https://twitter.com/RachelAppel/status/570715227936976896">Rachel Appel auf Twitter</a>
+      </p>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="offline" class="slide w cover"><div>
+    <section>
+      <header>
+        <h2>Wir sind mobil und schnell im Netz unterwegs…</h2>
+      </header>
+      <img src="pictures/offline.jpg" 
+           alt="Computer with no internet connection" 
+           class="middle shadow">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="griesgram" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Warum sind Entwickler Griesgrame?</h2>
+      </header>
+      <img src="pictures/magicword.gif" 
+           alt="Didn't say the magic word animation" 
+           class="middle shadow" height="450">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="geld" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Am Geld kanns ja nicht liegen…</h2>
+      </header>
+      <img src="pictures/wiping-tears-with-money.gif" 
+           alt="Wiping tears with money" 
+           class="middle shadow" height="450">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="dan" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2>Was motiviert uns?</h2>
+      </header>
+      <img src="pictures/danariely.jpg" 
+           alt="Dan Ariely's talk on TED.com" 
+           class="middle shadow" height="450">
+       <p class="demourl"><a href="http://www.ted.com/talks/dan_ariely_what_makes_us_feel_good_about_our_work.html">Dan Ariely: what makes us feel good about our work?</a></p>    
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="dropoff" class="slide cover"><div>
+    <section>
+      <header>
+        <h2>Wenn ich dir $x gebe…</h2>
+      </header>
+      <img src="pictures/change.jpg" 
+           alt="Money" 
+           class="middle shadow" height="450">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="bionicle" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Versuch 1: Lego Bionicles</h2>
+      </header>
+      <img src="pictures/bionicle.jpg" 
+           alt="Lego Bionicles" 
+           class="middle shadow" height="450">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="letter" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Versuch 2: Buchstaben zählen</h2>
+      </header>
+      <img src="pictures/letter.jpg" 
+           alt="Typed letter" 
+           class="middle shadow" height="450">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="threescenarios" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Drei Versuchsvarianten</h2>
+      </header>
+      <ul class="inner">
+        <li class="active">Erste Variante:  
+          <ul>
+            <li>Schreib deinen Namen aufs Papier.</li>
+            <li>Zähle die Buchstaben.</li>
+            <li>Wenn du fertig bist, schaut der Tester das Papier an, nickt, und legt das Papier auf einen Stapel.</li>
+          </ul>
+        </li> 
+        <li>Zweite Variante:  
+          <ul>
+            <li>Zähle die Buchstaben.</li>
+            <li>Wenn du fertig bist, nimmt der Tester das Papier und legt es auf den Stapel ohne es anzuschauen.</li>
+          </ul>
+        </li> 
+        <li>Dritte Variante:  
+          <ul>
+            <li>Zähle die Buchstaben.</li>
+            <li>Wenn du fertig bist, schreddert der Tester das Papier vor dir ohne es anzuschauen.</li>
+          </ul>
+        </li> 
+      </ul>
+
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="firstfindings" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Ergebnisse</h2>
+      </header>
+      <blockquote class="lots">Im der Schredder Variante waren die Teilnehmer am schnellsten nicht mehr bereit, die Aufgabe zu erfüllen. Allerdings nicht viel schneller als in der Variante, in der das Ergebnis nicht angeschaut wurde. Interessanterweise hat niemand es für nötig befunden zu schummeln.</blockquote>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="recognition" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Was macht uns Glücklich: Erste Regel</h2>
+      </header>
+      <blockquote>Anerkennung ist wichtiger als Bezahlung.</blockquote>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="origami" class="slide cover"><div>
+    <section>
+      <header>
+        <h2>Versuch 2: Orgami verkaufen</h2>
+      </header>
+      <img src="pictures/origami-elephant.gif" 
+           alt="Origami elephant" 
+           class="middle shadow" height="450">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="twoscenarios" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Zwei Versuchsvarianten:</h2>
+      </header>
+      <ul class="inner">
+        <li class="active">Erste Variante: 
+          <ul>
+            <li>Teilnehmer erhalten Anleitungen, wie das Origami zu falten ist.</li>
+            <li>Teilnehmer wurden gefragt, wieviel das Endprodukt wert ist.</li>
+            <li>Teilnehmer, die nicht sahen, wie das Origami erstellt wurde, wurden auch nach einem Preis gefragt.</li>
+          </ul>
+        </li> 
+        <li>Zweite Variante:  
+          <ul>
+            <li>Änderung: Teilnehmer bekommen nur eine Leitlinie, wie man ein solches Origami erstellen kann anstatt einer detailieren Anleitung.</li>
+          </ul>
+        </li> 
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="origamifindings" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Ergebnisse</h2>
+      </header>
+      <blockquote>Teilnehmer ohne detailierte Anleitung wollten höhere Preise. Diejenigen, die nicht gesehen haben, wie das Endprodukt entstand, wollten weniger zahlen. Grund war, das das Endprodukt qualitativ schlechter aussah.</blockquote>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>  
+
+  <div id="happiness2" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Was macht uns Glücklich: Zweite Regel</h2>
+      </header>
+      <blockquote>Je mehr man für etwas arbeiten muss, desto stolzer wird man auf seine Arbeit und verteidigt diese.</blockquote>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="blockers" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Was bedeutet das für uns?</h2>
+      </header>
+      <img src="pictures/happy-critter-in-flower.jpg" 
+           alt="production line of cars, 1940" 
+           class="middle shadow" height="450">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="productionline" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2>Echte Anerkennung ist selten</h2>
+      </header>
+      <img src="pictures/productionline1940.jpg" 
+           alt="production line of cars, 1940" 
+           class="middle shadow" height="450">
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="zucker" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Man muss ja nur die richtigen Teile zusammenbauen…</h2>
+      </header>
+      <img src="pictures/zuckerwuerfel.jpg" 
+           alt="Zuckerwürfelbausatz" 
+           class="middle shadow" height="450">
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="webofothers" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Enttäuschende Endergebnisse</h2>
+      </header>
+      <img src="pictures/india.jpg" 
+           alt="Applying for a Visa in India" 
+           class="middle shadow" height="400">
+      <p class="demourl"><a href="https://indianvisaonline.gov.in/visa/indianVisaReg.jsp">Visa application site for India</a></p>     
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="webofusers" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Leider nicht selten…</h2>
+      </header>
+      <img src="pictures/esta.jpg" 
+           alt="Applying for a Visa in the US" 
+           class="middle shadow" height="400">
+      <p class="demourl"><a href="https://esta.cbp.dhs.gov/esta/application.html?execution=e2s1">ESTA Visa waiver web site</a></p>     
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="fraud" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Zwischen Dunning-Kruger und Impostor…</h2>
+      </header>
+      <img src="pictures/codeworking.jpg" 
+           alt="Code works and I don't know why, code doesn't work and I don't know why" 
+           class="middle" height="350">
+      <p class="demourl"><a href="http://www.andybudd.com/archives/2014/02/specialism_ego_and_the_dunningkruger_eff/">Andy Budd: Specialism, Ego and The Dunning-Kruger Effect</a> - <a href="http://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect">Dunning-Kruger Effect</a> - <a href="http://en.wikipedia.org/wiki/Impostor_syndrome">Impostor syndrome</a></p>           
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="fraud2" class="slide w"><div>
+    <section>
+      <header>
+        <h2>So toll bin ich auch nicht…</h2>
+      </header>
+      <img src="pictures/fraud.png" 
+           alt="I feel like a fraud, and that's a good thing" 
+           class="middle shadow" height="350">
+      <p class="demourl"><a href="https://medium.com/@codepo8/i-feel-like-a-fraud-and-thats-a-good-thing-cc1fa338b902">Chris Heilmann: I feel like a fraud, and that's a good thing</a></p>           
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="alle" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Wir alle haben dieses Problem…</h2>
+      </header>
+      <img src="pictures/dog-plays-fetch-with-itself.gif" 
+           alt="Hund spielt fangen mit sich selbst" 
+           class="middle shadow" height="350">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="happier" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Wie werden wir fett, rosig und glücklich?</h2>
+      </header>
+      <img src="pictures/fatpuppies.jpg" 
+           alt="Puppies being fed" 
+           class="middle" height="380">
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="overlap" class="slide cover"><div>
+    <section>
+      <header>
+        <h2>Konzentrieren wir uns auf Gemeinsamkeiten…</h2>
+      </header>
+      <img src="pictures/venn.jpg" alt="venn diagram of beaver and duck = platypus" height="400" class="middle shadow">
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="jargon" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Tod dem Kauderwelsch!</h2>
+      </header>
+      <img src="pictures/use-the-force-harry-gandalf.jpg" 
+           alt="Use the force harry" 
+           class="middle shadow" height="">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="intelligenz" class="slide"><div>
+    <section>
+      <header>
+        <h2>Entwickler lieben das Lösen von Problemen…</h2>
+      </header>
+      <img src="pictures/intelligenz.png" alt="Intelligenztest auf Facebook" class="middle shadow">
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="getan" class="slide"><div>
+    <section>
+      <header>
+        <h2>Problemlösung ist das Hauptziel</h2>
+      </header>
+      <blockquote>
+        <p>
+          Wenn Entwickler versprechen, das eine Arbeit getan wird, dann wird die auch getan. Da muss man nicht alle zwei Monate nachfragen.
+        </p>
+        <p class="quotesource">
+          Chris Heilmann
+        </p>
+      </blockquote>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="interact" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2>Normale Arbeitszeiten sind weniger wichtig.</h2>
+      </header>
+      <img src="pictures/work-and-sleep.gif" 
+           alt="Code and sleep" 
+           class="middle shadow" height="400">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="distributed" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Meetings stören den Programmierfluss</h2>
+      </header>
+      <img src="pictures/distributed.png" 
+           alt="Distributed meetings" 
+           class="middle shadow" height="400">
+      <p class="demourl"><a href="http://christianheilmann.com/2015/02/24/making-distributed-team-meetings-work/">Chris Heilmann: Making distributed team meetings work</a></p>           
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="meetings" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Effektive meetings</h2>
+      </header>
+      <ul class="inner">
+        <li class="active">Haben eine Agenda (die auch eingehalten wird)</li>
+        <li>Haben nur die Teilnehmer, die auch wirklich dort sein müssen</li>
+        <li>Erlauben die Agenda mit Notizen zu versehen.</li>
+        <li>Sind für Teilnehmer ausserhalb erreichbar</li>
+        <li>Haben eine follow-up email mit der beschrifteten Agenda</li>
+        <li>Haben Action Items als Ergebnis</li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="tools" class="slide h cover"><div>
+    <section>
+      <header>
+        <h2>Sinnvolle Werkzeuge richtig anwenden</h2>
+      </header>
+      <img src="pictures/broken-tool.jpg" 
+           alt="kaputtes werkzeug" 
+           class="middle shadow" height="">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="word" class="slide"><div>
+    <section>
+      <header>
+        <h2>Word ist kein Bildformat und keine email</h2>
+      </header>
+      <img src="pictures/moving-a-picture-in-word.jpg" 
+           alt="Bilder in Word sind schwierig" 
+           class="middle shadow" height="400">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+  
+  <div id="nopowerpoint" class="slide w cover"><div>
+    <section>
+      <header>
+        <h2>Powerpoint ist keine Dokumentation!</h2>
+      </header>
+      <img src="pictures/bullet.jpg" 
+           alt="bullet" 
+           class="middle shadow" height="">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="tapete" class="slide w cover"><div>
+    <section>
+      <header>
+        <h2>Powerpoint = Tapete für Vorträge</h2>
+      </header>
+      <img src="pictures/tapete.jpg" 
+           alt="Tapete" 
+           class="middle shadow" height="">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="email" class="slide w cover"><div>
+    <section>
+      <header>
+        <h2>Email ist kein Schachtelformat</h2>
+      </header>
+      <img src="pictures/matroska.jpg" 
+           alt="Smashed Phone" 
+           class="middle shadow" height="">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="phone" class="slide w cover"><div>
+    <section>
+      <header>
+        <h2>Anrufe nur im Notfall</h2>
+      </header>
+      <img src="pictures/smashed-phone.jpg" 
+           alt="Smashed Phone" 
+           class="middle shadow" height="">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="bugzilla" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Expertensysteme sind für Experten</h2>
+      </header>
+      <img src="pictures/bugzilla.png" 
+           alt="Bugzilla" 
+           class="middle shadow" height="450">
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="blackandwhite" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Nichts ist schwarz und weiss… <small>(naja, Kühe, Dänische Doggen…)</small></h2>
+      </header>
+      <img src="pictures/black-lab-on-white.jpg" 
+           alt="unhappy black labrador puppy in snow" 
+           class="middle shadow" height="450">
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="verstaendnis" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Verbindungen knüpfen ist der wichtigste Schritt</h2>
+      </header>
+      <img src="pictures/making-chains-animation.gif" 
+           alt="making chain animation" 
+           class="middle shadow" height="450">
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="telljob" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Anstatt uns gegenseitig zu sagen, was wir machen sollen…</h2>
+      </header>
+      <img src="pictures/stop-telling-me-do-job.jpg" 
+           alt="Stop telling me how to do my job" 
+           class="middle shadow" height="400">
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="loben" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Oder zu loben, ohne zu verstehen…</h2>
+      </header>
+      <img src="pictures/worlds-best-entry-level-employee.jpg" 
+           alt="Stop telling me how to do my job" 
+           class="middle shadow" height="450">
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="fragen" class="slide cover w"><div>
+    <section>
+      <header>
+        <h2>Stellt gute Fragen, und hört genau hin!</h2>
+      </header>
+      <img src="pictures/questioning-fox.jpg" 
+           alt="Stop telling me how to do my job" 
+           class="middle shadow" height="450">
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+  
+
+  
+
+  <div id="credits" class="slide w"><div>
+    <section>
+      <header>
+        <h2>Dankeschön!</h2>
+      </header>
+      <div>
+      <p>Chris Heilmann</p>
+      <p>@codepo8</p>
+      <p>chheilma@microsoft.com</p>
+      <p>http://christianheilmann.com</p>
+      </div>
+      <img src="pictures/mein-erstes-webdesign.jpg" 
+           alt="Mein erstes Web Design" 
+           class="right" height="500">
+
+      <ul class="inline">
+        <li><a href="http://www.flickr.com/photos/hightechdad/6914579459/">Car pedals</a> (Michael Sheehan)</li>
+        <li><a href="http://www.flickr.com/photos/66992990@N00/8380135705/">Typed Letter</a> (Joanna Bourne)</li>
+        <li><a href="http://www.flickr.com/photos/imuttoo/3297472061/">Lego Bionicle</a> (Ian Muttoo)</li>
+        <li><a href="http://www.flickr.com/photos/stn1978/5068587360/">Chris at Fronteers 2010</a> (Stefan Nitzsche)</li>
+        <li><a href="http://www.flickr.com/photos/szene/6227425962/">Chris at Fronteers 2011</a> (Andreas Dantz)</li>
+        <li><a href="http://www.flickr.com/photos/hiddenloop/8398656663/">Lucky sign</a> (Matthew Hutchinson)</li>
+        <li><a href="http://www.flickr.com/photos/autohistorian/7599292324/">Car production line</a> (Alden Jewell)</li>
+        <li><a href="https://www.flickr.com/photos/58334991@N00/4505166396/">Tapete</a> (facker)</li>
+        <li><a href="https://www.flickr.com/photos/46265243@N00/6668090277/">Smashed Phone</a> (Solarbotics)</li>
+        <li><a href="https://www.flickr.com/photos/64492766@N00/6201563117/">Broken Tool</a> (Quim Gil)</li>
+        <li><a href="https://www.flickr.com/photos/29324276@N00/7876905/">Bullets</a> (ob1left)</li>
+        <li><a href="https://www.flickr.com/photos/22952517@N03/3268547290/">Bullet</a> (An Nguyen Photography)</li>
+        <li><a href="http://en.wikipedia.org/wiki/Matryoshka_doll#mediaviewer/File:Russian-Matroshka2.jpg">Matryoshka Doll</a> (Fanghong)</li>
+      </ul>
+    <footer class="notes">
+    </footer>
+
+    </section>
+  </div></div>
+
+
+  <!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+  <script src="script.js"></script>
+  <!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>
